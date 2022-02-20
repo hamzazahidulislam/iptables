@@ -54,6 +54,8 @@
       - Drop
       - Queue
       - Return
+      - MASQUERADE
+      - DNAT
       - User-Defined
   - ### Non-Terminating Targets
     - ### **_MARK, LOG_** and many others are non-terminating targets.
