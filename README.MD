@@ -81,6 +81,8 @@
 ### block website from your local network
 
     sudo iptables -A INPUT -s cleverange.com -j DROP
+    sudo iptables -A INPUT -s 10.0.1.0/24 -j DROP
+    sudo iptables -A INPUT -s 10.0.1.50 -j DROP
 
 ### delete block network from iptables
 
@@ -93,6 +95,23 @@
 ### unblock all network from iptables
 
     sudo iptables -P INPUT ACCEPT
+
+### block specific port
+
+    sudo iptables -I INPUT -p tcp --dport 80 -j DROP
+
+### block specific port with my ip address
+
+    sudo iptables -I INPUT -p tcp --dport 80 -s 37.111.231.86 -j ACCEPT
+
+### save the iptables configuration
+
+      sudo iptables-save > /etc/iptables/rules.v4
+      sudo /sbin/iptables-save > /etc/iptables/rules.v4
+
+### flush all rules in iptables configuration
+
+      sudo iptables -F
 
 ### Reference:
 
