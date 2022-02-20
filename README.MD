@@ -64,6 +64,8 @@
 
     iptables -t [table] - OPTIONS [CHAINS] [matching component] [action component]
 
+![IP-Tables-Commands](./ip-tables-commands.png)
+
 ### get list of iptables
 
     iptables -L -n -v
@@ -83,6 +85,14 @@
 ### delete block network from iptables
 
     sudo iptables -D INPUT 1
+
+### block all network from iptables
+
+    sudo iptables -P INPUT DROP
+
+### unblock all network from iptables
+
+    sudo iptables -P INPUT ACCEPT
 
 ### Reference:
 
